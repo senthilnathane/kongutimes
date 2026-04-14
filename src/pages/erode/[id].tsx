@@ -6,7 +6,6 @@ const ErodeArticle = () => {
   const { id } = useParams();
   const article = erodeNews.find((n) => n.id === id);
   if (!article) return <Navigate to="/erode" replace />;
-  return <NewsArticlePage districtId="erode" districtName="ஈரோடு" article={article} />;
+  return <NewsArticlePage districtId="erode" districtName="ஈரோடு" districtNameEn="Erode" article={article} />;
 };
-
 export default ErodeArticle;
