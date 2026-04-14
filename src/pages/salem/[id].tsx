@@ -6,7 +6,7 @@ const SalemArticle = () => {
   const { id } = useParams();
   const article = salemNews.find((n) => n.id === id);
   if (!article) return <Navigate to="/salem" replace />;
-  return <NewsArticlePage districtId="salem" districtName="சேலம்" article={article} />;
+  return <NewsArticlePage districtId="salem" districtName="சேலம்" districtNameEn="Salem" article={article} />;
 };
 
 export default SalemArticle;

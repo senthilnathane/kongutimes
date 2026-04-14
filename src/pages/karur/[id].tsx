@@ -6,7 +6,7 @@ const KarurArticle = () => {
   const { id } = useParams();
   const article = karurNews.find((n) => n.id === id);
   if (!article) return <Navigate to="/karur" replace />;
-  return <NewsArticlePage districtId="karur" districtName="கரூர்" article={article} />;
+  return <NewsArticlePage districtId="karur" districtName="கரூர்" districtNameEn="Karur" article={article} />;
 };
 
 export default KarurArticle;
