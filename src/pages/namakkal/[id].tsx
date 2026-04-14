@@ -6,7 +6,7 @@ const NamakkalArticle = () => {
   const { id } = useParams();
   const article = namakkalNews.find((n) => n.id === id);
   if (!article) return <Navigate to="/namakkal" replace />;
-  return <NewsArticlePage districtId="namakkal" districtName="நாமக்கல்" article={article} />;
+  return <NewsArticlePage districtId="namakkal" districtName="நாமக்கல்" districtNameEn="Namakkal" article={article} />;
 };
 
 export default NamakkalArticle;

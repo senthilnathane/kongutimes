@@ -6,7 +6,7 @@ const TiruppurArticle = () => {
   const { id } = useParams();
   const article = tiruppurNews.find((n) => n.id === id);
   if (!article) return <Navigate to="/tiruppur" replace />;
-  return <NewsArticlePage districtId="tiruppur" districtName="திருப்பூர்" article={article} />;
+  return <NewsArticlePage districtId="tiruppur" districtName="திருப்பூர்" districtNameEn="Tiruppur" article={article} />;
 };
 
 export default TiruppurArticle;

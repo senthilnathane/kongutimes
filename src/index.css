@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Tamil:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Tamil:wght@400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&family=DM+Sans:wght@400;500;600;700&family=Tiro+Tamil&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,33 +6,44 @@
 
 @layer base {
   :root {
-    --background: 0 0% 97%;
-    --foreground: 220 25% 12%;
+    --background: 36 33% 97%;
+    --foreground: 30 24% 8%;
     --card: 0 0% 100%;
-    --card-foreground: 220 25% 12%;
+    --card-foreground: 30 24% 8%;
     --popover: 0 0% 100%;
-    --popover-foreground: 220 25% 12%;
-    --primary: 15 90% 55%;
+    --popover-foreground: 30 24% 8%;
+    --primary: 24 90% 47%;
     --primary-foreground: 0 0% 100%;
-    --secondary: 340 75% 55%;
+    --secondary: 340 75% 50%;
     --secondary-foreground: 0 0% 100%;
-    --muted: 220 15% 92%;
-    --muted-foreground: 220 10% 45%;
-    --accent: 270 50% 50%;
+    --muted: 30 15% 92%;
+    --muted-foreground: 20 12% 42%;
+    --accent: 270 45% 42%;
     --accent-foreground: 0 0% 100%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 220 15% 88%;
-    --input: 220 15% 88%;
-    --ring: 15 90% 55%;
-    --radius: 0.75rem;
-    --district-coimbatore: 170 55% 45%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 30 18% 80%;
+    --input: 30 18% 80%;
+    --ring: 24 90% 47%;
+    --radius: 0.5rem;
+
+    --header-dark: 270 56% 11%;
+    --header-mid: 270 46% 21%;
+    --accent-orange: 24 90% 47%;
+    --accent-pink: 340 82% 50%;
+    --accent-gold: 40 88% 57%;
+    --paper: 36 33% 97%;
+    --paper-dark: 30 22% 88%;
+
+    --district-coimbatore: 270 45% 42%;
     --district-erode: 45 85% 52%;
-    --district-tiruppur: 340 75% 55%;
-    --district-karur: 270 50% 50%;
-    --district-salem: 200 70% 50%;
-    --district-namakkal: 140 50% 42%;
+    --district-tiruppur: 340 75% 50%;
+    --district-karur: 200 70% 45%;
+    --district-salem: 15 80% 50%;
+    --district-namakkal: 140 50% 38%;
     --district-dindigul: 25 80% 50%;
+    --district-dharmapuri: 180 50% 40%;
+
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
     --sidebar-primary: 240 5.9% 10%;
@@ -48,36 +59,88 @@
   * { @apply border-border; }
   body {
     @apply bg-background text-foreground;
-    font-family: 'Noto Sans Tamil', sans-serif;
+    font-family: 'DM Sans', 'Noto Sans Tamil', sans-serif;
+  }
+  h1, h2, h3 {
+    font-family: 'Playfair Display', 'Noto Sans Tamil', serif;
   }
 }
 
 @layer components {
   .gradient-header {
-    background: linear-gradient(135deg, hsl(15 90% 55%), hsl(340 75% 55%));
+    background: linear-gradient(135deg, hsl(var(--header-dark)) 0%, hsl(var(--header-mid)) 50%, hsl(var(--header-dark)) 100%);
+  }
+  .gradient-accent {
+    background: linear-gradient(90deg, hsl(var(--accent-orange)), hsl(var(--accent-pink)));
+  }
+  .gradient-hero {
+    background: linear-gradient(135deg, hsl(var(--header-dark)), hsl(var(--header-mid)));
   }
   .district-card {
-    @apply rounded-xl p-5 transition-all duration-300 cursor-pointer border border-border bg-card;
+    @apply rounded-xl p-5 transition-all duration-300 cursor-pointer border bg-card;
+    border-color: hsl(var(--border));
   }
   .district-card:hover {
     @apply shadow-lg -translate-y-1;
   }
   .news-card {
-    @apply bg-card rounded-xl overflow-hidden border border-border transition-all duration-300;
+    @apply bg-card rounded-xl overflow-hidden transition-all duration-300;
+    border: 1px solid hsl(var(--border));
+    box-shadow: 0 2px 12px rgba(0,0,0,0.04);
   }
   .news-card:hover {
-    @apply shadow-lg -translate-y-0.5;
+    @apply shadow-xl -translate-y-1;
   }
   .ticker-wrap {
     @apply overflow-hidden whitespace-nowrap;
   }
   .ticker-text {
     display: inline-block;
-    animation: ticker 30s linear infinite;
+    animation: ticker 40s linear infinite;
   }
+  .election-badge {
+    @apply inline-flex items-center gap-1 px-2 py-0.5 rounded text-xs font-semibold;
+    background: rgba(255,255,255,0.2);
+    letter-spacing: 0.06em;
+  }
+  .nav-link {
+    @apply text-xs font-semibold py-2.5 px-3 whitespace-nowrap border-b-2 border-transparent transition-all duration-200;
+    color: rgba(255,255,255,0.65);
+    font-family: 'DM Sans', sans-serif;
+  }
+  .nav-link:hover, .nav-link.active {
+    color: white;
+    border-bottom-color: hsl(var(--accent-orange));
+  }
+  .nav-link-special {
+    color: hsl(var(--accent-orange));
+    border-bottom-color: hsla(24, 90%, 47%, 0.4);
+  }
+  .nav-link-special:hover, .nav-link-special.active {
+    border-bottom-color: hsl(var(--accent-orange));
+    color: hsl(var(--accent-gold));
+  }
+
+  /* Party pill styles */
+  .pill-dmk { background: linear-gradient(90deg, #1a0000, #CC0000); color: #FFB3B3; }
+  .pill-aiadmk { background: linear-gradient(90deg, #0a2e14, #1a7a2e); color: #B8FFD0; }
+  .pill-tvk { background: linear-gradient(90deg, #8B0000, #FFD700); color: #1a0000; }
+  .pill-ntk { background: #8B0000; color: white; }
+
+  .candidate-pill {
+    @apply inline-block px-2 py-0.5 rounded text-xs font-semibold;
+  }
+  .candidate-pill-dmk { background: linear-gradient(90deg, #1a0000, #7a0000); color: #FFB3B3; }
+  .candidate-pill-aiadmk { background: linear-gradient(90deg, #0a2e14, #145a27); color: #B8FFD0; }
+  .candidate-pill-tvk { background: linear-gradient(90deg, #5c0000, #cc6600); color: #FFD700; }
+  .candidate-pill-ntk { background: #6B0010; color: #FFB3C1; }
 }
 
 @keyframes ticker {
   0% { transform: translateX(100%); }
   100% { transform: translateX(-100%); }
 }
+
+/* Scrollbar hide for nav */
+.scrollbar-hide::-webkit-scrollbar { display: none; }
+.scrollbar-hide { scrollbar-width: none; }

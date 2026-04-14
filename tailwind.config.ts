@@ -5,9 +5,14 @@ export default {
   content: ["./pages/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}", "./app/**/*.{ts,tsx}", "./src/**/*.{ts,tsx}"],
   prefix: "",
   theme: {
-    container: { center: true, padding: "2rem", screens: { "2xl": "1400px" } },
+    container: { center: true, padding: "2rem", screens: { "2xl": "1280px" } },
     extend: {
-      fontFamily: { tamil: ["'Noto Sans Tamil'", "sans-serif"] },
+      fontFamily: {
+        tamil: ["'Noto Sans Tamil'", "sans-serif"],
+        display: ["'Playfair Display'", "serif"],
+        body: ["'DM Sans'", "sans-serif"],
+        "tamil-serif": ["'Tiro Tamil'", "serif"],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -39,7 +44,15 @@ export default {
           salem: "hsl(var(--district-salem))",
           namakkal: "hsl(var(--district-namakkal))",
           dindigul: "hsl(var(--district-dindigul))",
+          dharmapuri: "hsl(var(--district-dharmapuri))",
         },
+        "header-dark": "hsl(var(--header-dark))",
+        "header-mid": "hsl(var(--header-mid))",
+        "accent-orange": "hsl(var(--accent-orange))",
+        "accent-pink": "hsl(var(--accent-pink))",
+        "accent-gold": "hsl(var(--accent-gold))",
+        paper: "hsl(var(--paper))",
+        "paper-dark": "hsl(var(--paper-dark))",
       },
       borderRadius: { lg: "var(--radius)", md: "calc(var(--radius) - 2px)", sm: "calc(var(--radius) - 4px)" },
       keyframes: {

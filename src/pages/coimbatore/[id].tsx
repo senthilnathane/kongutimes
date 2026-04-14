@@ -6,7 +6,6 @@ const CoimbatoreArticle = () => {
   const { id } = useParams();
   const article = coimbatoreNews.find((n) => n.id === id);
   if (!article) return <Navigate to="/coimbatore" replace />;
-  return <NewsArticlePage districtId="coimbatore" districtName="கோயம்புத்தூர்" article={article} />;
+  return <NewsArticlePage districtId="coimbatore" districtName="கோயம்புத்தூர்" districtNameEn="Coimbatore" article={article} />;
 };
-
 export default CoimbatoreArticle;
