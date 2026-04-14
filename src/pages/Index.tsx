@@ -1,8 +1,13 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+<<<<<<< HEAD
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import konguMap from "@/assets/kongu-map.png";
+=======
+import logo from "@/assets/kongu-times-logo.png";
+import { NavLink } from "@/components/NavLink";
+>>>>>>> 5235170 (Initial commit: Kongu Times with animations and candidates page)
 
 const districts = [
   { id: "coimbatore", name: "கோயம்புத்தூர்", nameEn: "Coimbatore", color: "bg-district-coimbatore" },
@@ -30,18 +35,121 @@ const latestNews = [
   { title: "ஈரோடு மஞ்சள் சந்தையில் விலை உயர்வு", district: "Erode", time: "6 மணி நேரம் முன்", link: "/erode" },
 ];
 
-const tickerNews = "🔴 கொங்கு நாட்டின் அனைத்து மாவட்ட செய்திகளும் ஒரே இடத்தில் | கோயம்புத்தூரில் புதிய தொழிற்பூங்கா திறப்பு | திருப்பூர் ஜவுளி ஏற்றுமதி 20% அதிகரிப்பு | நாமக்கல் முட்டை உற்பத்தி சாதனை | சேலம் எஃகு ஆலை விரிவாக்கம்";
+const tickerNews = "🔴 கொங்கு நாட்டின் அனைத்து மாவட்ட செய்திகளும் ஒரே இடத்தில் | கோயம்புத்தூரில் தொழிற்பூங்கா திறப்பு | திருப்பூர் ஜவுளி ஏற்றுமதி 20% உயர்வு | ஈரோடு மஞ்சள் விலை சுதந்திரம் | நாமக்கல் முட்டை உற்பத்தி சாதனை | திண்டுக்கல் பூட்டு ஏற்றுமதி வளர்ச்சி | கரூர் பேருந்து நிலையம் | சேலம் எஃகு ஆலையில் விரிவாக்கம்";
+
+const newsTemplates = [
+  {
+    title: "தமிழகத்தில் AI மற்றும் தொழில்நுட்ப வளர்ச்சி திட்டம் 2026ல் தொடங்குகிறது",
+    summary: "மாநில அரசு AI ஆராய்ச்சி மையங்கள் மற்றும் ஸ்டார்ட்-அப் ஆதரவு திட்டங்களை அறிவித்துள்ளது.",
+  },
+  {
+    title: "கோவிட் பிறகு சுற்றுலா துறை மீண்டும் உயிர்ப்பு பெறுகிறது",
+    summary: "தமிழகத்தில் புதிய சுற்றுலா தளங்கள் மற்றும் கிராமிய சுற்றுலா திட்டங்கள் விரிவாக்கப்படுகின்றன.",
+  },
+  {
+    title: "நீர் பாதுகாப்பு மற்றும் மழைநீர் சேகரிப்பு திட்டங்கள் விரிவாக்கம்",
+    summary: "உலக வங்கியின் உதவியுடன் புதிய நீர் சேமிப்பு திட்டங்கள் செயல் படுத்தப்படுகின்றன.",
+  },
+  {
+    title: "கல்வி துறையில் டிஜிட்டல் மாற்றம்: ஆன்லைன் கல்வி முழுமையாக்கம்",
+    summary: "பள்ளிகள் மற்றும் கல்லூரிகளுக்கு இணைய வசதிகள் மற்றும் டிஜிட்டல் கருவிகள் வழங்கப்படுகின்றன.",
+  },
+  {
+    title: "விவசாயத்தில் புதிய தொழில்நுட்பங்கள் மற்றும் உதவித்தொகை",
+    summary: "ஆர்கானிக் விவசாயம் மற்றும் ஸ்மார்ட் விவசாய கருவிகளுக்கு அரசு உதவித்தொகை அறிவிக்கப்பட்டது.",
+  },
+  {
+    title: "சுகாதார துறையில் தொலைநோய் கண்காணிப்பு அமைப்பு",
+    summary: "மருத்துவமனைகளுக்கு AI அடிப்படையிலான நோய் கண்காணிப்பு மற்றும் தொலைநோய் சிகிச்சை வசதிகள்.",
+  },
+  {
+    title: "பொருளாதார வளர்ச்சியில் தமிழகம் முன்னணியில்",
+    summary: "உற்பத்தி மற்றும் ஏற்றுமதி துறைகளில் புதிய முதலீடுகள் மற்றும் வேலைவாய்ப்புகள் உருவாக்கப்படுகின்றன.",
+  },
+  {
+    title: "சுற்றுச்சூழல் பாதுகாப்பு: காடுகள் மற்றும் வனப்பகுதிகள் விரிவாக்கம்",
+    summary: "மாநிலத்தில் புதிய காட்டு பகுதிகள் மற்றும் சுற்றுச்சூழல் திட்டங்கள் செயல் படுத்தப்படுகின்றன.",
+  },
+  {
+    title: "போக்குவரத்து துறையில் மின்சார வாகனங்கள் மற்றும் சார்ஜிங் நிலையங்கள்",
+    summary: "தமிழகத்தில் மின்சார வாகனங்கள் மற்றும் சார்ஜிங் இன்ப்ராஸ்ட்ரக்சர் விரிவாக்கப்படுகிறது.",
+  },
+  {
+    title: "பண்பாட்டு மற்றும் கலை நிகழ்ச்சிகள்: தமிழ் இலக்கிய விழா",
+    summary: "ஆண்டுதோறும் தமிழ் இலக்கிய விழா மற்றும் கலை நிகழ்ச்சிகள் மாநிலம் முழுவதும் நடத்தப்படுகின்றன.",
+  },
+];
+
+const newsTimes = [
+  "1 மணி நேரம் முன்",
+  "2 மணி நேரம் முன்",
+  "3 மணி நேரம் முன்",
+  "4 மணி நேரம் முன்",
+  "5 மணி நேரம் முன்",
+  "6 மணி நேரம் முன்",
+  "7 மணி நேரம் முன்",
+  "8 மணி நேரம் முன்",
+  "9 மணி நேரம் முன்",
+  "10 மணி நேரம் முன்",
+  "11 மணி நேரம் முன்",
+  "12 மணி நேரம் முன்",
+  "13 மணி நேரம் முன்",
+  "14 மணி நேரம் முன்",
+  "15 மணி நேரம் முன்",
+  "16 மணி நேரம் முன்",
+  "17 மணி நேரம் முன்",
+  "18 மணி நேரம் முன்",
+  "19 மணி நேரம் முன்",
+  "20 மணி நேரம் முன்",
+];
+
+const tamilNaduNews = Array.from({ length: 100 }, (_, index) => {
+  const template = newsTemplates[index % newsTemplates.length];
+  const position = index + 1;
+  return {
+    id: `tn-${position}`,
+    title: template.title.replace("{n}", String(position)),
+    summary: template.summary,
+    time: newsTimes[index % newsTimes.length],
+  };
+});
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-background font-body">
       <SiteHeader />
 
+      {/* District quick links */}
+      <section className="border-b border-border bg-surface">
+        <div className="container mx-auto px-4">
+          <div className="flex items-center gap-3 overflow-x-auto whitespace-nowrap py-3">
+            <NavLink
+              to="/candidates"
+              className="inline-flex whitespace-nowrap rounded-full border border-border bg-card px-4 py-2 text-sm font-medium text-card-foreground transition hover:bg-primary/10"
+              activeClassName="border-primary bg-primary/10 text-primary-foreground shadow-sm"
+            >
+              🗳️ வேட்பாளர்கள்
+            </NavLink>
+            {districts.map((district) => (
+              <NavLink
+                key={district.id}
+                to={`/${district.id}`}
+                className="inline-flex whitespace-nowrap rounded-full border border-border bg-card px-4 py-2 text-sm font-medium text-card-foreground transition hover:bg-primary/10"
+                activeClassName="border-primary bg-primary/10 text-primary-foreground shadow-sm"
+              >
+                {district.name}
+              </NavLink>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Ticker */}
       <div className="bg-foreground text-white py-2 ticker-wrap">
         <span className="ticker-text text-sm">{tickerNews}</span>
       </div>
 
+<<<<<<< HEAD
       {/* Hero Section */}
       <section className="gradient-hero py-10 md:py-16 border-b-[3px] border-accent-orange">
         <div className="max-w-[1280px] mx-auto px-4 md:px-6">
@@ -87,10 +195,38 @@ const Index = () => {
                 <span className="block text-xs text-muted-foreground mt-0.5">{d.nameEn}</span>
               </Link>
             </motion.div>
+=======
+      {/* Tamil Nadu Overall News */}
+      <section className="container mx-auto px-4 pb-10">
+        <div className="mb-8 text-center">
+          <h2 className="text-2xl md:text-3xl font-bold text-foreground">தமிழ்நாடு செய்திகள்</h2>
+          <p className="text-sm text-muted-foreground mt-2 max-w-2xl mx-auto">
+            முழு தமிழ்நாட்டை தொடுக்கும் முக்கிய செய்திகள் மற்றும் வளர்ச்சித் திட்டங்களை இங்கே படியுங்கள்.
+          </p>
+        </div>
+
+        <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+          {tamilNaduNews.map((item, index) => (
+            <motion.article
+              key={item.id}
+              className="news-card"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.05 }}
+            >
+              <div className="h-1.5 bg-primary rounded-t-md" />
+              <div className="p-5">
+                <h3 className="font-bold text-card-foreground mb-2 leading-relaxed">{item.title}</h3>
+                <p className="text-sm text-muted-foreground mb-3 leading-relaxed">{item.summary}</p>
+                <span className="text-xs text-muted-foreground">🕐 {item.time}</span>
+              </div>
+            </motion.article>
+>>>>>>> 5235170 (Initial commit: Kongu Times with animations and candidates page)
           ))}
         </div>
       </section>
 
+<<<<<<< HEAD
       {/* Latest News */}
       <section className="max-w-[1280px] mx-auto px-4 md:px-6 pb-10">
         <h2 className="text-2xl font-display font-bold text-foreground mb-6">
@@ -115,6 +251,21 @@ const Index = () => {
               </Link>
             </motion.div>
           ))}
+=======
+      {/* Footer */}
+      <footer className="gradient-header py-6 mt-12">
+        <div className="container mx-auto px-4 text-center text-primary-foreground">
+          <p className="font-semibold">© 2026 The Kongu Times</p>
+          <p className="text-sm opacity-80 mt-1">கொங்கு நாட்டின் குரல்</p>
+          <div className="mt-4 pt-4 border-t border-primary-foreground/20">
+            <p className="text-xs opacity-70">
+              🌐 Live on GitHub Pages
+            </p>
+            <p className="text-xs opacity-60 font-mono mt-1">
+              https://yourusername.github.io/kongutimes
+            </p>
+          </div>
+>>>>>>> 5235170 (Initial commit: Kongu Times with animations and candidates page)
         </div>
       </section>
 

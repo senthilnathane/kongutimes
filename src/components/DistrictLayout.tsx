@@ -75,7 +75,25 @@ const DistrictLayout = ({ districtId, districtName, districtNameEn, news }: Dist
         </div>
       </main>
 
+<<<<<<< HEAD
       <SiteFooter />
+=======
+      {/* Footer */}
+      <footer className="gradient-header py-6">
+        <div className="container mx-auto px-4 text-center text-primary-foreground">
+          <p className="font-semibold">© 2026 The Kongu Times</p>
+          <p className="text-sm opacity-80 mt-1">கொங்கு நாட்டின் குரல்</p>
+          <div className="mt-4 pt-4 border-t border-primary-foreground/20">
+            <p className="text-xs opacity-70">
+              🌐 Live on GitHub Pages
+            </p>
+            <p className="text-xs opacity-60 font-mono mt-1">
+              https://yourusername.github.io/kongutimes
+            </p>
+          </div>
+        </div>
+      </footer>
+>>>>>>> 5235170 (Initial commit: Kongu Times with animations and candidates page)
     </div>
   );
 };

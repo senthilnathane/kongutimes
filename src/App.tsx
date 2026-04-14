@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
+<<<<<<< HEAD
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import Candidates2026 from "./pages/candidates-2026/index";
@@ -22,6 +23,25 @@ import DindigulPage from "./pages/dindigul/index";
 import DindigulArticle from "./pages/dindigul/[id]";
 import DharmapuriPage from "./pages/dharmapuri/index";
 import DharmapuriArticle from "./pages/dharmapuri/[id]";
+=======
+import Index from "./pages/Index.tsx";
+import NotFound from "./pages/NotFound.tsx";
+import Candidates from "./pages/Candidates.tsx";
+import CoimbatorePage from "./pages/coimbatore/index.tsx";
+import CoimbatoreArticle from "./pages/coimbatore/[id].tsx";
+import ErodePage from "./pages/erode/index.tsx";
+import ErodeArticle from "./pages/erode/[id].tsx";
+import TiruppurPage from "./pages/tiruppur/index.tsx";
+import TiruppurArticle from "./pages/tiruppur/[id].tsx";
+import KarurPage from "./pages/karur/index.tsx";
+import KarurArticle from "./pages/karur/[id].tsx";
+import SalemPage from "./pages/salem/index.tsx";
+import SalemArticle from "./pages/salem/[id].tsx";
+import NamakkalPage from "./pages/namakkal/index.tsx";
+import NamakkalArticle from "./pages/namakkal/[id].tsx";
+import DindigulPage from "./pages/dindigul/index.tsx";
+import DindigulArticle from "./pages/dindigul/[id].tsx";
+>>>>>>> 5235170 (Initial commit: Kongu Times with animations and candidates page)
 
 const queryClient = new QueryClient();
 
@@ -33,7 +53,11 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
+<<<<<<< HEAD
           <Route path="/candidates-2026" element={<Candidates2026 />} />
+=======
+          <Route path="/candidates" element={<Candidates />} />
+>>>>>>> 5235170 (Initial commit: Kongu Times with animations and candidates page)
           <Route path="/coimbatore" element={<CoimbatorePage />} />
           <Route path="/coimbatore/:id" element={<CoimbatoreArticle />} />
           <Route path="/erode" element={<ErodePage />} />
